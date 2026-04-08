@@ -1,33 +1,34 @@
 ﻿# Privacy Auto Blur
 
-개인정보를 미리 등록해 두면 웹 페이지 안에 같은 문자열이 나타나는 순간 자동으로 블러 처리하는 크롬 확장프로그램입니다.
+Privacy Auto Blur is a Chrome extension that automatically hides saved personal information when it appears on a web page.
 
-## 포함된 기능
-- 옵션 페이지에서 개인정보 여러 개 저장
-- 페이지 로드 후 자동 스캔
-- SPA처럼 화면이 바뀌는 사이트도 재감지
-- `input`, `textarea` 값도 선택적으로 블러 처리
-- 대소문자 구분 옵션 제공
+## Features
+- Save multiple personal-info entries in the options page
+- Automatically scan page text after load
+- Re-detect content on dynamic pages and SPA updates
+- Optionally hide `input` and `textarea` values
+- Strong blur plus solid box masking for safer hiding
+- Faster partial rescans for better responsiveness
 
-## 설치 방법
-1. 크롬에서 `chrome://extensions` 로 이동
-2. 우측 상단 `개발자 모드` 활성화
-3. `압축해제된 확장 프로그램을 로드합니다` 클릭
-4. 이 폴더 `c:\Users\boywn\OneDrive\Desktop\hactor` 선택
+## Installation
+1. Open `chrome://extensions`
+2. Turn on Developer Mode
+3. Click `Load unpacked`
+4. Select this folder: `c:\Users\boywn\OneDrive\Desktop\hactor`
 
-## 사용 방법
-1. 확장프로그램 아이콘 클릭
-2. `설정 열기` 클릭
-3. 블러 처리하고 싶은 개인정보를 한 줄에 하나씩 입력
-4. 저장 후 페이지를 새로고침하거나 동적 페이지 변경을 기다리면 자동 감지
+## Usage
+1. Click the extension icon
+2. Open Settings
+3. Add personal information entries, one per line
+4. Save and refresh the page if needed
 
-## 현재 한계
-- 이미지 안 텍스트, canvas, 동영상 자막 같은 비DOM 텍스트는 감지하지 못함
-- 아주 큰 페이지는 감지 비용이 생길 수 있음
-- 현재는 문자열 포함 매칭 방식이라 주민번호 패턴처럼 범용 패턴 감지는 추가 개발이 필요함
+## Current Limitations
+- Does not detect text rendered inside images, canvas, or video
+- Uses string matching, not advanced pattern matching yet
+- Very large pages may still have some scanning cost
 
-## 다음 확장 아이디어
-- 정규식 기반 패턴 등록
-- 사이트별 예외 목록
-- 블러 대신 마스킹 문자로 대체
-- 하이라이트와 클릭 해제 모드
+## Planned Improvements
+- Regex-based pattern rules
+- Site-specific allow/block lists
+- Replace blur with text masking modes
+- Temporary reveal or admin toggle
