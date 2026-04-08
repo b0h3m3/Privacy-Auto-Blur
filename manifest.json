@@ -1,0 +1,21 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Privacy Auto Blur",
+  "version": "0.1.0",
+  "description": "Automatically blurs personal information that appears on web pages.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Privacy Auto Blur"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
